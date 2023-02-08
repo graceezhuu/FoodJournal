@@ -21,10 +21,8 @@ struct entryList: View {
                         cardView(card: Entry)
                         
                         NavigationLink(destination: entryView(entry: Entry)) {
-                            Text("Click Me")
+                            Text("Open Journal Entry")
                         }
-            
-                        
 //                        .frame(width: 300, height: 10, alignment: .bottomTrailing)
 //                        .gesture(
 //                            TapGesture()
@@ -32,8 +30,8 @@ struct entryList: View {
 //                                    isActive = true
 //                                }
 //                        )
-                        .listRowSeparator(.hidden)
-                    }
+                    }.listRowSeparator(.hidden)
+                    .listRowSeparatorTint(.gray)
                 }
             }
         }

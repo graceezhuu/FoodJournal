@@ -51,11 +51,6 @@ struct cardView: View {
                             .foregroundColor(.blue)
                     }
                 }
-//                NavigationLink(destination: entryView(entry: card), tag: "Second", selection: $selection) { EmptyView() }
-                Button("Tap to show second") {
-                    self.selection = "Second"
-                }
-                
                 //                NavigationLink(destination: entryView(entry: card)) {
                 //                    Text("Click Me")
                 //                }

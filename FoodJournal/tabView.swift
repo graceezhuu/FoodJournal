@@ -17,14 +17,17 @@ struct tabView: View {
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }
+                .tag(0)
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
+                .tag(1)
             CalendarView()
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
+                .tag(2)
         }
     }
 }
