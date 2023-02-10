@@ -26,7 +26,7 @@ struct HomeView: View {
                         .padding()
 
                 }
-                entryList()
+                entryList(card: entriesVM.entrants[0])
             }
             .navigationTitle("Food Journal")
             .toolbar {

@@ -26,7 +26,7 @@ struct Entry: Identifiable, Hashable {
     let selectedType: Category.RawValue
     let calories: Double
     let description: String
-    var isFavorite: Bool
+    let date: String
 }
 
 extension Entry {
@@ -36,6 +36,6 @@ extension Entry {
                selectedType: "Breakfast",
                calories: 400.0,
                description: "French toast just has such a way of starting the morning off in the best way. Paired with a bowl of fresh berries, a few slices of bacon, and a drizzle of maple syrup, and a dollop of whipped cream make this a meal that is always a crowd favorite!",
-               isFavorite: false)
+               date: "April 30th" )
     ]
 }

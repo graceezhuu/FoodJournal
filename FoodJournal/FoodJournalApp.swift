@@ -10,11 +10,14 @@ import SwiftUI
 @main
 struct FoodJournalApp: App {
     @StateObject var journalViewModel = JournalViewModel()
+    @StateObject var favoriteViewModel = FavoriteViewModel()
+
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(JournalViewModel())
+                .environmentObject(FavoriteViewModel())
         }
     }
 }

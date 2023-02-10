@@ -9,11 +9,8 @@ import Foundation
 
 class JournalViewModel: ObservableObject {
     @Published private(set) var entrants: [Entry] = []
+    
     @Published var favorite = false
-
-    var filteredItems: [Entry] {
-           return entrants.filter { $0.isFavorite == true }
-       }
 
     init () {
         entrants = Entry.all
@@ -21,5 +18,9 @@ class JournalViewModel: ObservableObject {
     
     func addEntry(entries: Entry) {
         entrants.append(entries)
+    }
+    
+    func removeEntry(entries: Entry) {
+        entrants.removeAll(where: { $0 == entries })
     }
 }

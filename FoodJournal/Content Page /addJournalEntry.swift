@@ -11,10 +11,8 @@ import SwiftUI
 struct addJournalEntry: View {
     @EnvironmentObject var entriesVM: JournalViewModel
     @State private var name = ""
-    @State private var cal = ""
     @State var type = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Drink"]
     @State var selectedType = "Breakfast"
-    @State var sliderValue : Double = 0.0
     @State var calorieVal = 0.0
     @State private var description = ""
     @Binding var isPresenting: Bool
@@ -86,7 +84,7 @@ struct addJournalEntry_Previews: PreviewProvider {
 
 extension addJournalEntry {
     private func saveEntry() {
-        let entry = Entry(name: name, image: selectedType, selectedType: selectedType, calories: calorieVal, description: description, isFavorite: entriesVM.favorite)
+        let entry = Entry(name: name, image: selectedType, selectedType: selectedType, calories: calorieVal, description: description, date: "April 30th")
         entriesVM.addEntry(entries: entry)
     }
 }

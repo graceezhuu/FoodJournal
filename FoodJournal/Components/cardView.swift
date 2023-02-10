@@ -28,9 +28,7 @@ struct cardView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 190)
                 .clipShape(Rectangle())
-            HStack {
-                Text(card.name)
-            }
+            Text(card.name)
             HStack {
                 Text(card.selectedType)
                     .foregroundColor(.gray)
@@ -51,15 +49,26 @@ struct cardView: View {
                             .foregroundColor(.blue)
                     }
                 }
-                //                NavigationLink(destination: entryView(entry: card)) {
-                //                    Text("Click Me")
-                //                }
+                .buttonStyle(BorderlessButtonStyle())
+
+                NavigationLink(destination: entryView(entry: card)) {
+    
+                }
             }
+            Button ("Delete", role: .destructive) {
+                removeFromList()
+                removeFavorite()
+            }
+            .buttonStyle(BorderlessButtonStyle())
+            Spacer()
         }
     }
     func addFavorite() {        favoriteVM.addFavorite(entries: card)
     }
     func removeFavorite() {        favoriteVM.removeFavorite(entries: card)
+    }
+    func removeFromList() {
+        entriesVM.removeEntry(entries: card)
     }
 }
 

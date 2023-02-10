@@ -11,39 +11,34 @@ struct entryList: View {
     @EnvironmentObject var entriesVM: JournalViewModel
     @EnvironmentObject var favoriteVM: FavoriteViewModel
     @State private var isActive = false
-
+    @State var card: Entry
+    
     
     var body: some View {
-        
-        VStack {
-            List {
-                ForEach(entriesVM.entrants.dropFirst(1)) { Entry in
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(entriesVM.entrants.dropFirst(1)) { Entry in
                         cardView(card: Entry)
                         
                         NavigationLink(destination: entryView(entry: Entry)) {
                             Text("Open Journal Entry")
                         }
-//                        .frame(width: 300, height: 10, alignment: .bottomTrailing)
-//                        .gesture(
-//                            TapGesture()
-//                                .onEnded { _ in
-//                                    isActive = true
-//                                }
-//                        )
-                    }.listRowSeparator(.hidden)
-                    .listRowSeparatorTint(.gray)
+                    }
                 }
             }
-        }
+        }.navigationTitle(card.date)
     }
-    
-    struct entryList_Previews: PreviewProvider {
-        static var previews: some View {
-            entryList()
-                .environmentObject(JournalViewModel())
-                .environmentObject(FavoriteViewModel())
-        }
+}
+
+
+struct entryList_Previews: PreviewProvider {
+    static var previews: some View {
+        entryList(card: Entry.all[0])
+            .environmentObject(JournalViewModel())
+            .environmentObject(FavoriteViewModel())
     }
+}
 
 //                    NavigationLink( destination: entryView(entry: Entry)) {
 //                        cardView(card: Entry)
