@@ -24,9 +24,6 @@ struct favoriteList: View {
                 ForEach(favoriteVM.favorites.dropFirst(1)) { Entry in
                     cardView(card: Entry, favOn: true)
                     
-                    NavigationLink(destination: entryView(entry: Entry)) {
-                        Text("Open Journal Entry")
-                    }
                 }
             }
         }

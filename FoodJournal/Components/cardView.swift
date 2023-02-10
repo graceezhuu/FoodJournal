@@ -23,6 +23,7 @@ struct cardView: View {
         //        var addFavorite = favoriteVM.addFavorite(entries: card)
         
         VStack(alignment: .leading) {
+            
             Image(card.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -52,15 +53,15 @@ struct cardView: View {
                 .buttonStyle(BorderlessButtonStyle())
 
                 NavigationLink(destination: entryView(entry: card)) {
-    
                 }
             }
+            .padding(.bottom)
             Button ("Delete", role: .destructive) {
                 removeFromList()
                 removeFavorite()
             }
-            .buttonStyle(BorderlessButtonStyle())
-            Spacer()
+            .buttonStyle(.borderless)
+            .frame(maxWidth: 300, alignment: .center)
         }
     }
     func addFavorite() {        favoriteVM.addFavorite(entries: card)

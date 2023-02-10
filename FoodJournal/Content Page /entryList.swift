@@ -19,15 +19,14 @@ struct entryList: View {
             VStack {
                 List {
                     ForEach(entriesVM.entrants.dropFirst(1)) { Entry in
-                        cardView(card: Entry)
-                        
-                        NavigationLink(destination: entryView(entry: Entry)) {
-                            Text("Open Journal Entry")
+                        Section {
+                            cardView(card: Entry)
+                                .listRowSeparator(.visible)
                         }
                     }
-                }
+                }.listStyle(InsetGroupedListStyle())
             }
-        }.navigationTitle(card.date)
+        }
     }
 }
 
