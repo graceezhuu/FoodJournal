@@ -12,6 +12,8 @@ struct entryView: View {
     
     
     var body: some View {
+        let formatDate = entry.date.formatted(date:.abbreviated, time:.omitted)
+        
         ScrollView {
             Image(entry.image)
                 .resizable()
@@ -27,8 +29,8 @@ struct entryView: View {
                     .padding([.top, .leading, .trailing])
                     .frame(width: 400)
                     .multilineTextAlignment(.center)
+                Text("Date: " + formatDate)
                 Text("Calories: " + String(entry.calories))
-                    .font(.subheadline)
 
                 VStack (alignment: .leading, spacing: 30){
                     Text(entry.description)

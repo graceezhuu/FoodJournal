@@ -11,10 +11,14 @@ import SwiftUI
 
 struct HomeView: View {
     @State var showSheet: Bool = false
+    @State var showCal: Bool = false
     @EnvironmentObject var entriesVM: JournalViewModel
     
     var body: some View {
         let size = entriesVM.entrants.count
+        let showDate = entriesVM.entrants[0].date
+        let formatDate = showDate.formatted(date:.abbreviated, time:.omitted)
+        
         NavigationView {
             VStack {
                 if (size - 1 == 0) {
@@ -28,7 +32,7 @@ struct HomeView: View {
                 }
                 entryList(card: entriesVM.entrants[0])
             }
-            .navigationTitle("Food Journal")
+            .navigationTitle(formatDate)
             .toolbar {
                 Button {
                     showSheet = true
@@ -36,6 +40,13 @@ struct HomeView: View {
                     Image(systemName: "plus")
                 } .sheet(isPresented: $showSheet) {
                     addJournalEntry(isPresenting: $showSheet)
+                }
+                Button {
+                    showCal = true
+                }label: {
+                    Image(systemName: "calendar")
+                }.sheet(isPresented: $showCal) {
+                    CalendarView()
                 }
             }
         }

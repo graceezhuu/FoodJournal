@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Category: String {
     var id: String {self.rawValue}
@@ -26,7 +27,7 @@ struct Entry: Identifiable, Hashable {
     let selectedType: Category.RawValue
     let calories: Double
     let description: String
-    let date: String
+    let date: Date
 }
 
 extension Entry {
@@ -36,6 +37,6 @@ extension Entry {
                selectedType: "Breakfast",
                calories: 400.0,
                description: "French toast just has such a way of starting the morning off in the best way. Paired with a bowl of fresh berries, a few slices of bacon, and a drizzle of maple syrup, and a dollop of whipped cream make this a meal that is always a crowd favorite!",
-               date: "April 30th" )
+               date: Date.now)
     ]
 }

@@ -24,6 +24,7 @@
 		654EA4DA2984707500856F7E /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EA4D92984707500856F7E /* FavoritesView.swift */; };
 		654EA4DC2984709000856F7E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EA4DB2984709000856F7E /* CalendarView.swift */; };
 		65531C0A2992CAEF00201AC5 /* favoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65531C092992CAEF00201AC5 /* favoriteList.swift */; };
+		65CB14F3299C19BF00DD0D54 /* toolbarCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB14F2299C19BF00DD0D54 /* toolbarCalendarView.swift */; };
 		65EE11E0299364CA0043A40D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE11DF299364CA0043A40D /* FavoriteViewModel.swift */; };
 		65EE11E329936CB50043A40D /* entryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE11E229936CB50043A40D /* entryView.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		654EA4D92984707500856F7E /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		654EA4DB2984709000856F7E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		65531C092992CAEF00201AC5 /* favoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteList.swift; sourceTree = "<group>"; };
+		65CB14F2299C19BF00DD0D54 /* toolbarCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolbarCalendarView.swift; sourceTree = "<group>"; };
 		65EE11DF299364CA0043A40D /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		65EE11E229936CB50043A40D /* entryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 				654EA4D92984707500856F7E /* FavoritesView.swift */,
 				654EA4D72984701B00856F7E /* HomeView.swift */,
 				654EA4DB2984709000856F7E /* CalendarView.swift */,
+				65CB14F2299C19BF00DD0D54 /* toolbarCalendarView.swift */,
 				6505CFFC299191CA009630D1 /* View Model */,
 				6505CFF9298F91C3009630D1 /* Content Page  */,
 				6505CFF2298D05F7009630D1 /* Components */,
@@ -327,6 +330,7 @@
 				65EE11E329936CB50043A40D /* entryView.swift in Sources */,
 				654EA4DC2984709000856F7E /* CalendarView.swift in Sources */,
 				654EA4D82984701B00856F7E /* HomeView.swift in Sources */,
+				65CB14F3299C19BF00DD0D54 /* toolbarCalendarView.swift in Sources */,
 				6505CFF8298F9187009630D1 /* entryList.swift in Sources */,
 				653CA862297AF7B200AFF7D6 /* ContentView.swift in Sources */,
 				65531C0A2992CAEF00201AC5 /* favoriteList.swift in Sources */,

@@ -16,7 +16,8 @@ struct addJournalEntry: View {
     @State var calorieVal = 0.0
     @State private var description = ""
     @Binding var isPresenting: Bool
-
+    @State var date = Date.now
+    
     var body: some View {
         NavigationView {
             Form {
@@ -84,7 +85,7 @@ struct addJournalEntry_Previews: PreviewProvider {
 
 extension addJournalEntry {
     private func saveEntry() {
-        let entry = Entry(name: name, image: selectedType, selectedType: selectedType, calories: calorieVal, description: description, date: "April 30th")
+        let entry = Entry(name: name, image: selectedType, selectedType: selectedType, calories: calorieVal, description: description, date: date)
         entriesVM.addEntry(entries: entry)
     }
 }

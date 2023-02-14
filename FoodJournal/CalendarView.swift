@@ -12,10 +12,12 @@ import UIKit
 struct CalendarView: View {
     var date = Text(Date.now, format: .dateTime.day().month().year())
     @State var selectedDate: Date = Date()
-
+    @State var calendarSelectedDate: Date = Date()
+    @State private var showingSheet = false
+    
     
     var body: some View {
-        let formatDate = selectedDate.formatted(date: .abbreviated, time: .omitted)
+        let formatDate = selectedDate.formatted(date:.abbreviated, time:.omitted)
         
         VStack() {
             Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
@@ -25,14 +27,28 @@ struct CalendarView: View {
                 .padding()
                 .animation(.spring(), value: selectedDate)
                 .frame(width: 500)
+            
+                
             Divider().frame(height: 1)
-            DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+            DatePicker("Select Date", selection: $calendarSelectedDate, displayedComponents: [.date])
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
+                .onChange(of: calendarSelectedDate) { newValue in
+                                    selectedDate = newValue
+                                }
+                .onTapGesture {
+                        showingSheet.toggle()
+                        print(showingSheet)
+                }
+                .sheet(isPresented: $showingSheet) {
+                    HomeView()
+                }
+            
             Divider()
             Text("Today is \(formatDate)" )
         }
         .padding(.vertical, 100)
+
     }
 }
 
