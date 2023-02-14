@@ -10,13 +10,24 @@ import Foundation
 import UIKit
 
 struct CalendarView: View {
+    @EnvironmentObject var entriesVM: JournalViewModel
     var date = Text(Date.now, format: .dateTime.day().month().year())
     @State var selectedDate: Date = Date()
     @State var calendarSelectedDate: Date = Date()
     @State private var showingSheet = false
+    @State private var searchText: String = ""
+    
     
     
     var body: some View {
+//        var filteredItems: [entriesVM] {
+//                if searchText.isEmpty {
+//                    return entriesVM.entrants[0]
+//                } else {
+//                    return entriesVM.entrants.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+//                }
+//        }
+        
         let formatDate = selectedDate.formatted(date:.abbreviated, time:.omitted)
         
         VStack() {
@@ -30,15 +41,11 @@ struct CalendarView: View {
             
                 
             Divider().frame(height: 1)
-            DatePicker("Select Date", selection: $calendarSelectedDate, displayedComponents: [.date])
+            DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
                 .padding(.horizontal)
                 .datePickerStyle(.graphical)
-                .onChange(of: calendarSelectedDate) { newValue in
-                                    selectedDate = newValue
-                                }
-                .onTapGesture {
-                        showingSheet.toggle()
-                        print(showingSheet)
+                .onChange(of: selectedDate) { _ in
+                    showingSheet.toggle()
                 }
                 .sheet(isPresented: $showingSheet) {
                     HomeView()
@@ -55,6 +62,7 @@ struct CalendarView: View {
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()
+            .environmentObject(JournalViewModel())
     }
 }
 

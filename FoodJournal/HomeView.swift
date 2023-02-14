@@ -19,6 +19,8 @@ struct HomeView: View {
         let showDate = entriesVM.entrants[0].date
         let formatDate = showDate.formatted(date:.abbreviated, time:.omitted)
         
+
+        
         NavigationView {
             VStack {
                 if (size - 1 == 0) {
