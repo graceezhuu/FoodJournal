@@ -17,18 +17,22 @@ struct cardView: View {
     @State var favOn = false
     @State private var isButtonActive = false
     @State private var selection: String? = nil
-    
+    @State var isShowingPhotoPicker = false
+    @State var cardImage = UIImage()
     
     var body: some View {
-        //        var addFavorite = favoriteVM.addFavorite(entries: card)
+        let cardImage = UIImage(named: card.image)
         
         VStack(alignment: .leading) {
             
-            Image(card.image)
+            Image(uiImage: cardImage!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 190)
                 .clipShape(Rectangle())
+                .onTapGesture {
+                    isShowingPhotoPicker = true
+                }
             Text(card.name)
             HStack {
                 Text(card.selectedType)
@@ -63,6 +67,9 @@ struct cardView: View {
             .buttonStyle(.borderless)
             .frame(maxWidth: 300, alignment: .center)
         }
+        .sheet(isPresented: $isShowingPhotoPicker, content: {
+            PhotoPicker(cardImage: $cardImage)
+        })
     }
     func addFavorite() {        favoriteVM.addFavorite(entries: card)
     }

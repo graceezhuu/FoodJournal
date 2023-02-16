@@ -17,13 +17,8 @@ struct favoriteList: View {
         
         VStack {
             List {
-                //                ForEach(favorites, id: \.self) { Entry in
-                //                        cardView(card: Entry)
-                //                    }
-                //                }
                 ForEach(favoriteVM.favorites.dropFirst(1)) { Entry in
                     cardView(card: Entry, favOn: true)
-                    
                 }
             }
         }

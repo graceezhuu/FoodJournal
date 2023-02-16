@@ -24,6 +24,8 @@
 		654EA4DA2984707500856F7E /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EA4D92984707500856F7E /* FavoritesView.swift */; };
 		654EA4DC2984709000856F7E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654EA4DB2984709000856F7E /* CalendarView.swift */; };
 		65531C0A2992CAEF00201AC5 /* favoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65531C092992CAEF00201AC5 /* favoriteList.swift */; };
+		65B90C63299EC64100B14AC0 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B90C62299EC64100B14AC0 /* PhotoPicker.swift */; };
+		65B90C64299EC7ED00B14AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA867297AF7B400AFF7D6 /* Preview Assets.xcassets */; };
 		65CB14F3299C19BF00DD0D54 /* toolbarCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB14F2299C19BF00DD0D54 /* toolbarCalendarView.swift */; };
 		65EE11E0299364CA0043A40D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE11DF299364CA0043A40D /* FavoriteViewModel.swift */; };
 		65EE11E329936CB50043A40D /* entryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE11E229936CB50043A40D /* entryView.swift */; };
@@ -68,6 +70,7 @@
 		654EA4D92984707500856F7E /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		654EA4DB2984709000856F7E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		65531C092992CAEF00201AC5 /* favoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteList.swift; sourceTree = "<group>"; };
+		65B90C62299EC64100B14AC0 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		65CB14F2299C19BF00DD0D54 /* toolbarCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolbarCalendarView.swift; sourceTree = "<group>"; };
 		65EE11DF299364CA0043A40D /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		65EE11E229936CB50043A40D /* entryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entryView.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 				6505CFF3298D0615009630D1 /* cardView.swift */,
 				6505CFFA298F91DE009630D1 /* entryModel.swift */,
 				65EE11E229936CB50043A40D /* entryView.swift */,
+				65B90C62299EC64100B14AC0 /* PhotoPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -305,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B90C64299EC7ED00B14AC0 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +331,7 @@
 				6505CFFB298F91DE009630D1 /* entryModel.swift in Sources */,
 				654EA4DA2984707500856F7E /* FavoritesView.swift in Sources */,
 				6505CFF4298D0615009630D1 /* cardView.swift in Sources */,
+				65B90C63299EC64100B14AC0 /* PhotoPicker.swift in Sources */,
 				654EA4D629846C0400856F7E /* tabView.swift in Sources */,
 				65EE11E329936CB50043A40D /* entryView.swift in Sources */,
 				654EA4DC2984709000856F7E /* CalendarView.swift in Sources */,
