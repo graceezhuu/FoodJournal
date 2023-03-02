@@ -15,9 +15,6 @@ struct CalendarView: View {
     @State var selectedDate: Date = Date()
     @State var calendarSelectedDate: Date = Date()
     @State private var showingSheet = false
-    @State private var searchText: String = ""
-    
-    
     
     var body: some View {
 //        var filteredItems: [entriesVM] {
@@ -48,7 +45,9 @@ struct CalendarView: View {
                     showingSheet.toggle()
                 }
                 .sheet(isPresented: $showingSheet) {
-                    HomeView()
+                    NavigationView {
+                        entryList(card: entriesVM.entrants[0], displayDate: selectedDate)
+                    }
                 }
             
             Divider()

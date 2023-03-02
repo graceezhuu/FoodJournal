@@ -21,8 +21,8 @@ struct cardView: View {
     @State var cardImage = UIImage()
     
     var body: some View {
-        let cardImage = UIImage(named: card.image)
-        
+        var cardImage = UIImage(named: card.image)
+
         VStack(alignment: .leading) {
             
             Image(uiImage: cardImage!)
@@ -33,6 +33,7 @@ struct cardView: View {
                 .onTapGesture {
                     isShowingPhotoPicker = true
                 }
+            
             Text(card.name)
             HStack {
                 Text(card.selectedType)
@@ -70,6 +71,10 @@ struct cardView: View {
         .sheet(isPresented: $isShowingPhotoPicker, content: {
             PhotoPicker(cardImage: $cardImage)
         })
+        .onAppear {
+            print("cardImage: \(cardImage)")
+        }
+
     }
     func addFavorite() {        favoriteVM.addFavorite(entries: card)
     }
@@ -77,6 +82,9 @@ struct cardView: View {
     }
     func removeFromList() {
         entriesVM.removeEntry(entries: card)
+    }
+    func setImage(image: UIImage) {
+        card.image = image.toPngString()!
     }
 }
 
@@ -90,5 +98,15 @@ struct cardView_Previews: PreviewProvider {
     }
 }
 
-
+extension UIImage {
+    func toPngString() -> String? {
+        let data = self.pngData()
+        return data?.base64EncodedString(options: .endLineWithLineFeed)
+    }
+  
+    func toJpegString(compressionQuality cq: CGFloat) -> String? {
+        let data = self.jpegData(compressionQuality: cq)
+        return data?.base64EncodedString(options: .endLineWithLineFeed)
+    }
+}
 

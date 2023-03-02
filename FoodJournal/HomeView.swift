@@ -15,7 +15,8 @@ struct HomeView: View {
     @EnvironmentObject var entriesVM: JournalViewModel
     
     var body: some View {
-        let size = entriesVM.entrants.count
+        let size = entriesVM.entrants.filter {
+            Calendar.current.compare($0.date, to: Date.now, toGranularity: .day) == .orderedSame}.count
         let showDate = entriesVM.entrants[0].date
         let formatDate = showDate.formatted(date:.abbreviated, time:.omitted)
         
@@ -23,16 +24,19 @@ struct HomeView: View {
         
         NavigationView {
             VStack {
-                if (size - 1 == 0) {
+                if (size - 1 <= 0) {
                     Image("dog-sit")
                         .resizable()
                         .frame(width:100, height:100)
-                        .padding(.top,250)
                     Text("Wow such empty")
                         .padding()
 
                 }
-                entryList(card: entriesVM.entrants[0])
+                else {
+                    entryList(card: entriesVM.entrants[0])
+                        .navigationTitle(formatDate)
+
+                }
             }
             .navigationTitle(formatDate)
             .toolbar {
@@ -48,7 +52,7 @@ struct HomeView: View {
                 }label: {
                     Image(systemName: "calendar")
                 }.sheet(isPresented: $showCal) {
-                    CalendarView()
+                    toolbarCalendarView()
                 }
             }
         }

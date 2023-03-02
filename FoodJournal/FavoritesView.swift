@@ -15,7 +15,7 @@ struct FavoritesView: View {
             VStack {
                 favoriteList()
             }
-            .navigationTitle("Favorites")
+            .navigationTitle("All-Time Favorites")
         }
     }
 }

@@ -16,7 +16,7 @@ struct addJournalEntry: View {
     @State var calorieVal = 0.0
     @State private var description = ""
     @Binding var isPresenting: Bool
-    @State var date = Date.now
+    @State var date: Date = Date.now
     
     var body: some View {
         NavigationView {
@@ -78,8 +78,8 @@ struct addJournalEntry: View {
 
 struct addJournalEntry_Previews: PreviewProvider {
     static var previews: some View {
-        addJournalEntry(isPresenting: .constant(true))
-        addJournalEntry(isPresenting: .constant(false))
+        addJournalEntry(isPresenting: .constant(true), date: Date.now)
+        addJournalEntry(isPresenting: .constant(false), date: Date.now)
     }
 }
 

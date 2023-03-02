@@ -20,10 +20,16 @@ enum Category: String {
     
 }
 
+protocol ImageOrUIImage { }
+
+extension Int: ImageOrUIImage  { }
+extension String: ImageOrUIImage  { }
+
 struct Entry: Identifiable, Hashable {
+    
     let id = UUID()
     let name: String
-    let image: String
+    var image: String
     let selectedType: Category.RawValue
     let calories: Double
     let description: String
