@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 
 struct cardView: View {
@@ -18,14 +19,16 @@ struct cardView: View {
     @State private var isButtonActive = false
     @State private var selection: String? = nil
     @State var isShowingPhotoPicker = false
+    @State var myImage = UIImage()
     @State var cardImage = UIImage()
-    
-    var body: some View {
-        var cardImage = UIImage(named: card.image)
+    @State var isShowingEntryView = true
 
+
+    var body: some View {
+        
         VStack(alignment: .leading) {
             
-            Image(uiImage: cardImage!)
+            Image(uiImage: cardImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 190)
@@ -57,7 +60,7 @@ struct cardView: View {
                 }
                 .buttonStyle(BorderlessButtonStyle())
 
-                NavigationLink(destination: entryView(entry: card)) {
+                NavigationLink(destination: entryView(entry: card, cardImage: $cardImage)) {
                 }
             }
             .padding(.bottom)
@@ -71,9 +74,7 @@ struct cardView: View {
         .sheet(isPresented: $isShowingPhotoPicker, content: {
             PhotoPicker(cardImage: $cardImage)
         })
-        .onAppear {
-            print("cardImage: \(cardImage)")
-        }
+
 
     }
     func addFavorite() {        favoriteVM.addFavorite(entries: card)
@@ -82,9 +83,6 @@ struct cardView: View {
     }
     func removeFromList() {
         entriesVM.removeEntry(entries: card)
-    }
-    func setImage(image: UIImage) {
-        card.image = image.toPngString()!
     }
 }
 
@@ -98,15 +96,5 @@ struct cardView_Previews: PreviewProvider {
     }
 }
 
-extension UIImage {
-    func toPngString() -> String? {
-        let data = self.pngData()
-        return data?.base64EncodedString(options: .endLineWithLineFeed)
-    }
-  
-    func toJpegString(compressionQuality cq: CGFloat) -> String? {
-        let data = self.jpegData(compressionQuality: cq)
-        return data?.base64EncodedString(options: .endLineWithLineFeed)
-    }
-}
+
 

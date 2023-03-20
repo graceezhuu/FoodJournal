@@ -15,16 +15,11 @@ struct CalendarView: View {
     @State var selectedDate: Date = Date()
     @State var calendarSelectedDate: Date = Date()
     @State private var showingSheet = false
+    @State var showSheet: Bool = false
+    @State var showCal: Bool = false
     
     var body: some View {
-//        var filteredItems: [entriesVM] {
-//                if searchText.isEmpty {
-//                    return entriesVM.entrants[0]
-//                } else {
-//                    return entriesVM.entrants.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-//                }
-//        }
-        
+
         let formatDate = selectedDate.formatted(date:.abbreviated, time:.omitted)
         
         VStack() {
@@ -45,9 +40,7 @@ struct CalendarView: View {
                     showingSheet.toggle()
                 }
                 .sheet(isPresented: $showingSheet) {
-                    NavigationView {
-                        entryList(card: entriesVM.entrants[0], displayDate: selectedDate)
-                    }
+                    entryList(card: entriesVM.entrants[0], displayDate: selectedDate)
                 }
             
             Divider()
@@ -57,6 +50,7 @@ struct CalendarView: View {
 
     }
 }
+
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {

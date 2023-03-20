@@ -61,13 +61,9 @@ struct toolbarCalendarView: View {
                             }
                     }
                 }
-//            if showingSheet == true {
-//                NavigationLink(destination:  entryList(card: entriesVM.entrants[0], displayDate: selectedDate)) {
-//                }
-//            }
             
             Divider()
-            Text("Today is \(formatDate)" )
+            Text("You have selected \(formatDate)" )
         }
         .padding(.vertical, 100)
 

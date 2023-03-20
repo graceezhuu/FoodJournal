@@ -9,13 +9,13 @@ import SwiftUI
 
 struct entryView: View {
     var entry: Entry
-    
-    
+    @Binding var cardImage: UIImage
+
     var body: some View {
         let formatDate = entry.date.formatted(date:.abbreviated, time:.omitted)
         
         ScrollView {
-            Image(entry.image)
+            Image(uiImage: cardImage)
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
@@ -44,7 +44,9 @@ struct entryView: View {
 }
 
 struct entryView_Previews: PreviewProvider {
+    @State static var selectedImage = UIImage()
+
     static var previews: some View {
-        entryView(entry: Entry.all[0])
+        entryView(entry: Entry.all[0], cardImage: $selectedImage)
     }
 }

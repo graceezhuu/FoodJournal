@@ -14,7 +14,6 @@
 		6505CFFE299191F0009630D1 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505CFFD299191F0009630D1 /* JournalViewModel.swift */; };
 		653CA860297AF7B200AFF7D6 /* FoodJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653CA85F297AF7B200AFF7D6 /* FoodJournalApp.swift */; };
 		653CA862297AF7B200AFF7D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653CA861297AF7B200AFF7D6 /* ContentView.swift */; };
-		653CA864297AF7B400AFF7D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA863297AF7B400AFF7D6 /* Assets.xcassets */; };
 		653CA868297AF7B400AFF7D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA867297AF7B400AFF7D6 /* Preview Assets.xcassets */; };
 		653CA872297AF7B400AFF7D6 /* FoodJournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653CA871297AF7B400AFF7D6 /* FoodJournalTests.swift */; };
 		653CA87C297AF7B400AFF7D6 /* FoodJournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653CA87B297AF7B400AFF7D6 /* FoodJournalUITests.swift */; };
@@ -27,6 +26,9 @@
 		65B90C63299EC64100B14AC0 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B90C62299EC64100B14AC0 /* PhotoPicker.swift */; };
 		65B90C64299EC7ED00B14AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA867297AF7B400AFF7D6 /* Preview Assets.xcassets */; };
 		65CB14F3299C19BF00DD0D54 /* toolbarCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB14F2299C19BF00DD0D54 /* toolbarCalendarView.swift */; };
+		65E4B45329C6E7D400EC486E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA863297AF7B400AFF7D6 /* Assets.xcassets */; };
+		65E4B45429C6E7D400EC486E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA863297AF7B400AFF7D6 /* Assets.xcassets */; };
+		65E4B45529C6E7D500EC486E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653CA863297AF7B400AFF7D6 /* Assets.xcassets */; };
 		65EE11E0299364CA0043A40D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE11DF299364CA0043A40D /* FavoriteViewModel.swift */; };
 		65EE11E329936CB50043A40D /* entryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE11E229936CB50043A40D /* entryView.swift */; };
 /* End PBXBuildFile section */
@@ -300,8 +302,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E4B45429C6E7D400EC486E /* Assets.xcassets in Resources */,
 				653CA868297AF7B400AFF7D6 /* Preview Assets.xcassets in Resources */,
-				653CA864297AF7B400AFF7D6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E4B45329C6E7D400EC486E /* Assets.xcassets in Resources */,
 				65B90C64299EC7ED00B14AC0 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E4B45529C6E7D500EC486E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,9 +433,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -481,8 +487,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -491,6 +499,7 @@
 		653CA882297AF7B400AFF7D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FoodJournal/FoodJournal.entitlements;
@@ -507,6 +516,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -519,7 +529,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = IBCSHL.FoodJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,6 +540,7 @@
 		653CA883297AF7B400AFF7D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FoodJournal/FoodJournal.entitlements;
@@ -545,6 +557,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -557,7 +570,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = IBCSHL.FoodJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
